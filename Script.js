@@ -1,8 +1,7 @@
-```javascript
 // script.js
 
 // Simulate wallet data
-let user = {
+const user = {
   wallet: "EQAb123...XYZ",
   staked: 150,
   apy: 12,
@@ -15,10 +14,15 @@ let user = {
 
 // Staking display
 function loadStaking() {
-  document.getElementById("wallet").textContent = user.wallet;
-  document.getElementById("staked").textContent = user.staked + " LEG";
-  document.getElementById("apy").textContent = user.apy + "
-  document.getElementById("rewards").textContent = user.rewards + "LEG";
+  const walletEl = document.getElementById("wallet");
+  const stakedEl = document.getElementById("staked");
+  const apyEl = document.getElementById("apy");
+  const rewardsEl = document.getElementById("rewards");
+
+  if (walletEl) walletEl.textContent = user.wallet;
+  if (stakedEl) stakedEl.textContent = user.staked + " LEG";
+  if (apyEl) apyEl.textContent = user.apy + "% APY";
+  if (rewardsEl) rewardsEl.textContent = user.rewards + " LEG";
 }
 
 // Handle stake/unstake buttons
@@ -38,11 +42,13 @@ function unstake() {
 // Load NFTs
 function loadNFTs() {
   const container = document.getElementById("nft-container");
+  if (!container) return;
+  container.innerHTML = ""; // clear previous items to avoid duplicates
   user.nfts.forEach(nft => {
     const card = document.createElement("div");
     card.className = "nft-card";
     card.innerHTML = `
-      <img src="nft.image" alt="{nft.name}">
+      <img src="${nft.image}" alt="${nft.name}">
       <p>${nft.name}</p>
     `;
     container.appendChild(card);
@@ -50,13 +56,19 @@ function loadNFTs() {
 }
 
 // Referral link generator
-function generateReferral() {const username = document.getElementById("referralInput").value;
-  const link = `https://t.me/LegendCoinBot?start={username}`;
-  document.getElementById("referralLink").textContent = link;
+function generateReferral() {
+  const username = document.getElementById("referralInput")?.value || "";
+  const link = `https://t.me/LegendCoinBot?start=${encodeURIComponent(username)}`;
+  const linkEl = document.getElementById("referralLink");
+  if (linkEl) {
+    linkEl.textContent = link;
+    if (linkEl.tagName && linkEl.tagName.toLowerCase() === "a") {
+      linkEl.href = link;
+    }
+  }
 }
 
 window.onload = function () {
   loadStaking();
   loadNFTs();
 };
-```
