@@ -1,0 +1,58 @@
+```css
+/* style.css */
+
+body { font-family: 'Segoe UI', Tahoma, Geneva,Verdana, sans-serif; background: #f2f2f2;color: 
+#333;padding: 20px;margin: 0;}
+
+header {text-align: center;background-color: 
+#3333aa;color: white;padding: 20px 10px; border-radius: 8px;}
+
+h1 {margin: 0;font-size: 28px;}
+
+main { margin-top: 20px;}
+
+section {background: white;
+  border-radius: 10px;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);}
+
+section h2 { margin-top: 0;
+  color: #3333aa;}
+
+button {background-color: #3333aa;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 8px;
+  margin-right: 8px;}
+
+button:hover { background-color: #222288;}
+
+#nft-container {display: flex;flex-wrap: wrap; gap: 10px;padding-top: 10px;}
+
+.nft-card {border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  width: 130px;
+  text-align: center;
+  background-color: #fafafa;}
+
+.nft-card img {width: 100%;
+  border-radius: 6px;}
+
+input[type="text"] { width: 100%;
+  padding: 8px;
+  border: 1px solid #bbb;
+  border-radius: 5px;
+  margin: 8px 0;}
+
+footer {text-align: center;
+  font-size: 13px;
+  color: #666;
+  padding-top: 20px;}
+
+

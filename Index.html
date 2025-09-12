@@ -1,0 +1,78 @@
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LegendCoin Telegram App</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+  <header>
+    <h1>🌍 LegendCoin Portal</h1>
+    <p>Blending Blockchain, Culture & Combat</p>
+  </header>
+
+  <main>
+    <!-- Wallet & User Info -->
+    <section id="wallet-section">
+      <h2>Wallet Info</h2>
+      <p id="wallet-address">Loading wallet...</p>
+      <p id="token-balance">Balance: --</p>
+    </section>
+
+    <!-- Staking -->
+    <section id="staking-section">
+      <h2>🌾 Staking</h2>
+      <p>Staked Balance: <span id="staked-amount">0</span> $LEG</p>
+      <p>APY: <span id="apy">12%</span></p>
+      <p>Rewards: <span id="rewards">0</span></p>
+      <button onclick="stake()">Stake</button>
+      <button onclick="unstake()">Unstake</button>
+    </section>
+
+    <!-- Farming -->
+    <section id="farming-section">
+      <h2>🌻 Farming</h2>
+      <p>Choose LP Pair:</p>
+      <select id="lp-pair">
+<option value="LEG-TON">LEG-TON</option>
+        <option value="LEG-USDT">LEG-USDT</option>
+      </select>
+      <p>Total LP: <span id="lp-total">0</span></p>
+      <p>Rewards/Block: <span id="lp-rewards">--</span></p>
+    </section>
+
+    <!-- NFT Gallery -->
+    <section id="nft-section">
+      <h2>🖼 NFT Gallery</h2>
+      <div id="nft-container">Loading NFTs...</div>
+      <button onclick="mintNFT()">Mint New NFT</button>
+    </section>
+
+    <!-- Combat -->
+    <section id="combat-section">
+      <h2>⚔️ Combat Arena</h2>
+      <button onclick="startFriendlyCombat()">Friendly Combat</button>
+      <button onclick="startRankedCombat()">Ranked Combat</button>
+    </section>
+
+    <!-- Referral -->
+    <section id="referral-section">
+      <h2>🔗 Referral</h2>
+      <p>Your Link:</p>
+      <input type="text" id="referral-link" readonly>
+      <button onclick="copyReferral()">Copy</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>LegendCoin © 2025 – Powered by TON Blockchain</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+```
